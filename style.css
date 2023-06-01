@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    background-image: url(assets/board.jpg);
+}
+
+h1{
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 80px;
+}
+
+.container{
+    background-color: black;
+    color: white;
+}
+
+form{
+    width: 730px;
+    height: 200px;
+    margin: auto;
+    background-image: url(assets/form.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -376px;
+}
+
+form textarea{
+    width: 400px;
+    height: 200px;
+    
+}
