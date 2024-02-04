@@ -17,37 +17,49 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script defer src="source.js"></script>
+    <script defer src="script.js"></script>
 </head>
 
 <body>
-
     <header>
         <h1>My Task Board</h1>
     </header>
 
-    <main>
-
-        <div class="container">
-
+    <main class="container-fluid">
+        <section>
             <form>
 
-                <textarea id="inputNote" placeholder="Enter your task.."></textarea>
+                <div class="inputs">
 
-                <button type="button" id="btn">Add Task</button>
-                <button type="reset">Reset</button>
+                    <div class="noteTxt">
+                        <label for="note">Task</label>
+                        <textarea id="note" placeholder="Enter task details..."></textarea>
+                        <span id="noteErr"></span>
+                    </div>
+
+                    <div class="dateTime">
+                        <label for="date">Due Date</label>
+                        <input type="date" id="date" class="form-control">
+                        <span id="dateErr"></span>
+
+                        <label for="time">Target Time</label>
+                        <input type="time" id="time" class="form-control">
+                        <span id="timeErr"></span>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button type="button" id="btn" onclick="addNote()">Add Task</button>
+                    <button type="reset">Reset</button>
+                </div>
+
             </form>
+        </section>
 
-            <div class="noteBox">
-                <img id="imgNote">
-                <span id="date"></span>
-                <span id="time"></span>
-            </div>
-
-        </div>
-
+        <section class="notes">
+            <div id="notesBox"></div>
+        </section>
     </main>
-
 </body>
 
 </html>

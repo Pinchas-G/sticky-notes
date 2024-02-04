@@ -1,36 +1,283 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: var(--form-main-color);
 }
 
-html, body{
+:root {
+    --form-main-color: rgb(123, 78, 34);
+}
+
+html,
+body {
     background-image: url(assets/board.jpg);
+    background-size: 745px 400px;
+    min-width: 690px;
+    user-select: none;
 }
 
-h1{
+h1 {
     text-align: center;
     font-family: 'Lobster', cursive;
     font-size: 80px;
+    text-shadow: #edb50f 0px 0px 6px;
+    color: beige;
 }
 
-.container{
-    background-color: black;
-    color: white;
+.container-fluid {
+    padding: 45px;
 }
 
-form{
-    width: 730px;
+form {
     height: 200px;
     margin: auto;
     background-image: url(assets/form.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: -376px;
+    background-position-y: bottom;
+    background-position-x: left;
+    max-width: 730px;
 }
 
-form textarea{
-    width: 400px;
-    height: 200px;
-    
+form label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+form .inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 552px;
+    margin: auto;
+}
+
+form .noteTxt {
+    display: flex;
+    flex-flow: column;
+}
+
+form textarea {
+    resize: none;
+    width: 350px;
+    height: 102px;
+    background: none;
+    font-size: 22px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0px 1px 4px var(--form-main-color);
+    padding: 7PX;
+    transition: box-shadow 0.2s;
+}
+
+form textarea:focus {
+    box-shadow: 0px 5px 16px var(--form-main-color);
+    outline: none;
+}
+
+form textarea::placeholder {
+    color: #7b4e22c0;
+}
+
+form textarea+span,
+form input+span {
+    color: red;
+    height: 22px;
+    font-size: 14px;
+    display: inline-block;
+    min-width: max-content;
+}
+
+form .dateTime {
+    display: flex;
+    flex-flow: column;
+    width: 150px;
+}
+
+form .dateTime input {
+    height: 30px;
+    font-size: 16px;
+    background: #e7b07996;
+    color: #7b4e21;
+    border: none;
+    box-shadow: 0px 1px 4px var(--form-main-color);
+}
+
+form .dateTime input:focus {
+    background: #e7b07996;
+    box-shadow: 0px 1px 10px var(--form-main-color);
+}
+
+form .buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+form button {
+    width: 120px;
+    height: 30px;
+    border-radius: 20px;
+    color: var(--form-main-color);
+    background: #f0d8ac;
+    box-shadow: 0px 1px 4px var(--form-main-color);
+    border: none;
+    font-weight: 400;
+}
+
+form button:hover {
+    scale: 1.05;
+}
+
+form button:first-child {
+    font-weight: bold;
+}
+
+section.notes {
+    margin-top: 45px
+}
+
+#notesBox {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    row-gap: 41px;
+    column-gap: 40px;
+}
+
+.noteBox {
+    height: 243px;
+    width: 260px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.noteBox i {
+    position: absolute;
+    font-size: 18px;
+    color: var(--form-main-color);
+    border-radius: 50%;
+    display: none;
+}
+
+.noteBox:hover i {
+    display: block;
+}
+
+.noteBox div {
+    align-self: center;
+    height: 120px;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.noteBox span {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.back1 {
+    background-image: url(./assets/png_1.png);
+    padding: 43px 35px 11px 38px;
+}
+
+
+.back2 {
+    background-image: url(./assets/png_2.png);
+    padding: 39px 29px 18px 31px;
+    height: 243px;
+    width: 260px;
+}
+
+.back3 {
+    background-image: url(./assets/png_3.png);
+    padding: 69px 70px 25px 46px;
+    height: 300px;
+    width: 296px;
+}
+
+.back4 {
+    background-image: url(./assets/png_4.png);
+    padding: 78px 30px 32px 52px;
+    height: 243px;
+    width: 280px;
+}
+
+.back5 {
+    background-image: url(./assets/png_5.png);
+    padding: 28px 35px 24px 24px;
+    height: 243px;
+    width: 270px;
+}
+
+.back5 div {
+    height: 140px;
+}
+
+.back1 i {
+    right: 18px;
+    top: 33px;
+}
+
+.back2 i {
+    right: 35px;
+    top: 15px;
+}
+
+.back3 i {
+    right: 44px;
+    top: 66px;
+}
+
+.back4 i {
+    right: 8px;
+    top: 71px;
+}
+
+.back5 i {
+    right: 9px;
+    top: 22px;
+}
+
+i:hover {
+    scale: 1.08;
+    cursor: pointer;
+}
+
+/* scrollbars */
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+form textarea::-webkit-scrollbar {
+    width: 6px;
+}
+
+.noteBox div::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--form-main-color);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0d8ac;
+    border-radius: 6px;
 }
