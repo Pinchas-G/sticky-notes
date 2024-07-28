@@ -56,6 +56,10 @@ A simple task management application to create, display, and manage sticky notes
 
 Check out the live demo: [Sticky Notes](https://pinchas-g.github.io/sticky-notes/)
 
+## Screenshot
+
+![alt text](/assets/screenshot.png)
+
 ## License
 
 This project is licensed under the MIT License.
